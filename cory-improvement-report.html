@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Improvement Report — Cory McCunney</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; overflow: hidden; background: #060a0f; color: #ccccdd; font-family: system-ui, -apple-system, sans-serif; font-size: 17px; line-height: 1.8; }
+.pages-container { display: flex; height: 100%; transition: transform 0.4s ease; }
+.page { min-width: 100vw; height: 100vh; overflow-y: auto; padding: 60px 80px; display: flex; flex-direction: column; justify-content: flex-start; }
+.page:nth-child(odd) { background: #060a0f; }
+.page:nth-child(even) { background: #0a0e14; }
+.page.title-page { justify-content: center; align-items: center; text-align: center; }
+.title-page h1 { font-size: 2.8em; color: #00e5ff; margin-bottom: 20px; font-weight: 700; letter-spacing: -1px; }
+.title-page .subtitle { font-size: 1.1em; color: #8899aa; margin-bottom: 8px; }
+.title-page .divider { width: 80px; height: 2px; background: #ff9800; margin: 30px auto; }
+h2 { color: #00e5ff; font-size: 1.7em; margin-bottom: 24px; font-weight: 600; letter-spacing: -0.5px; }
+h3 { color: #ff9800; font-size: 1.2em; margin-top: 28px; margin-bottom: 12px; font-weight: 600; }
+p { margin-bottom: 16px; }
+strong { color: #eeeeff; }
+em { color: #8899aa; font-style: italic; }
+ul, ol { margin-left: 24px; margin-bottom: 16px; }
+li { margin-bottom: 10px; padding-left: 4px; }
+.better { background: #0d1a12; border-left: 3px solid #ff9800; padding: 14px 18px; margin: 14px 0 18px 0; border-radius: 0 6px 6px 0; }
+.better strong { color: #ff9800; }
+.muted { color: #8899aa; }
+.content-wrap { max-width: 820px; width: 100%; margin: 0 auto; }
+/* Navigation */
+.nav-arrow { position: fixed; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; background: rgba(0,229,255,0.08); border: 1px solid rgba(0,229,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 100; transition: background 0.2s; color: #00e5ff; font-size: 20px; user-select: none; }
+.nav-arrow:hover { background: rgba(0,229,255,0.18); }
+.nav-arrow.left { left: 16px; }
+.nav-arrow.right { right: 16px; }
+.nav-arrow.hidden { opacity: 0; pointer-events: none; }
+/* Progress dots */
+.progress { position: fixed; right: 16px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 8px; z-index: 100; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #1a2030; cursor: pointer; transition: background 0.2s, transform 0.2s; }
+.dot.active { background: #00e5ff; transform: scale(1.4); }
+/* Page counter */
+.page-counter { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); color: #8899aa; font-size: 0.85em; z-index: 100; }
+</style>
+</head>
+<body>
+
+<div class="nav-arrow left hidden" id="navLeft" onclick="go(-1)">&#9664;</div>
+<div class="nav-arrow right" id="navRight" onclick="go(1)">&#9654;</div>
+<div class="progress" id="progress"></div>
+<div class="page-counter" id="counter"></div>
+
+<div class="pages-container" id="deck">
+
+<!-- PAGE 0: Title -->
+<div class="page title-page">
+  <h1>&#9670; Improvement Report</h1>
+  <h1 style="font-size:1.8em;color:#ff9800;margin-top:-10px;">Cory McCunney</h1>
+  <div class="divider"></div>
+  <div class="subtitle"><strong>Date:</strong> March 22, 2026</div>
+  <div class="subtitle"><strong>Purpose:</strong> Honest, constructive feedback on working patterns with AI — what's working, what's not, and how to get more out of every session.</div>
+  <div class="subtitle" style="margin-top:40px;color:#8899aa;font-size:0.9em;">Use arrow keys or click to navigate &rarr;</div>
+</div>
+
+<!-- PAGE 1: What Works Well -->
+<div class="page"><div class="content-wrap">
+  <h2>Prompting Patterns That Work Well</h2>
+  <h3>Voice Dictation for Rapid Idea Capture</h3>
+  <p>This is a genuine strength. Using voice to dump ideas, specs, and direction into the conversation is fast and natural. It mirrors how creative people actually think — in bursts, not in neatly formatted documents. The raw, unfiltered input often contains the best insights precisely because it hasn't been over-edited. Keep doing this.</p>
+  <h3>High-Level Direction with Autonomy</h3>
+  <p>Giving the AI a vision and letting it figure out the implementation details is the right approach. Micromanaging every CSS property or function name is a waste of your time and the AI's capability. Your instinct to say "build me a module that does X, Y, Z" and trust the execution is exactly how experienced engineers delegate to junior developers. It works.</p>
+  <h3>Iterative Refinement</h3>
+  <p>The pattern of building something, reviewing it, and then refining is productive. It's how professional software development works — ship, review, improve. You're naturally working in sprints even if you're not calling them that. This produces better results than trying to specify everything perfectly upfront.</p>
+</div></div>
+
+<!-- PAGE 2: Could Improve 1-2 -->
+<div class="page"><div class="content-wrap">
+  <h2>Prompting Patterns That Could Improve</h2>
+  <h3>Scope Creep Mid-Build</h3>
+  <p>This is the biggest area for improvement. When a module is being built, adding new features or changing direction midway creates compounding problems. Each addition shifts the foundation, and by the end, the original architecture may not support everything that's been bolted on. The result is code that works but is fragile.</p>
+  <div class="better"><strong>Better approach:</strong> Let the current build finish completely. Review it as a whole. Then batch your additions into a single, clear follow-up request. "The module is done. Now I want to add these three things: A, B, and C." This preserves the structural integrity of what was already built and gives the AI a clean starting point for additions.</div>
+  <h3>Rebuilding vs. Editing (The "Watering Down" Problem)</h3>
+  <p>When something isn't right, the instinct to say "rebuild it" feels efficient but is actually destructive. A complete rebuild starts from zero — the AI doesn't carry forward the subtle things it got right the first time. Each rebuild risks losing quality in areas you were happy with while trying to fix the one thing you weren't.</p>
+  <div class="better"><strong>Better approach:</strong> Be surgical. Instead of "rebuild the dashboard," try "the dashboard layout is good, but the sidebar navigation is too cluttered — simplify it to just these 5 items and keep everything else exactly as is." This preserves the 90% that was working and fixes the 10% that wasn't.</div>
+</div></div>
+
+<!-- PAGE 3: Could Improve 3-4 -->
+<div class="page"><div class="content-wrap">
+  <h2>Prompting Patterns That Could Improve <span class="muted" style="font-size:0.6em;">(continued)</span></h2>
+  <h3>Specificity When Something Is Wrong</h3>
+  <p>"It's not right" or "this doesn't feel good" is hard to act on. The AI will make its best guess about what you don't like, and it'll guess wrong at least half the time. That leads to another cycle of "not right" and another rebuild.</p>
+  <div class="better"><strong>Better approach:</strong> Point to the specific element. "The header font is too small." "The color scheme feels too corporate — I want something darker and more techy." "The trading module should show the P&amp;L chart above the order book, not below it." Specific feedback produces specific fixes. Even "I don't like it but I can't articulate why" is better than nothing — it tells the AI to offer you options rather than guess.</div>
+  <h3>Voice-to-Text Cleanup</h3>
+  <p>The typos and rough formatting from voice dictation are fine for conversational AI interaction — context makes them perfectly parseable. But when that text ends up in documentation, Notion pages, or code comments, it looks unpolished. A quick cleanup pass — even just asking the AI "clean up the grammar and formatting in what I just said" — takes 10 seconds and makes everything downstream more professional.</p>
+</div></div>
+
+<!-- PAGE 4: Hardware/Software 1-3 -->
+<div class="page"><div class="content-wrap">
+  <h2>Hardware &amp; Software Recommendations</h2>
+  <h3>Mac Mini M4 as Dedicated Server</h3>
+  <p>This was discussed during the session and it's a solid idea. A dedicated machine running the AI server, local databases, and background tasks means your primary workstation stays clean and responsive. The M4's neural engine handles local AI inference well, and the always-on nature means scheduled tasks and syncs run without needing your main machine awake.</p>
+  <div class="better"><strong>Setup priority:</strong> Get it on your local network, install the AI server components, and set up SSH access so you can manage it from your main machine or even your phone.</div>
+  <h3>Second Monitor Dedicated to FlowDeck</h3>
+  <p>If you're trading, having FlowDeck on a dedicated screen — showing your task list, trade journal, and AI command center — while TradingView and Bookmap occupy your primary monitors is a significant workflow upgrade. Context switching between windows kills focus. Dedicated screen real estate for your command center eliminates that friction.</p>
+  <h3>Separate Anthropic API Billing Account</h3>
+  <p>Keep the AI server's API costs on its own billing account. This makes it easy to track how much the AI infrastructure actually costs, set budget alerts, and separate personal usage from any future business expenses. It's a small organizational step now that prevents accounting headaches later.</p>
+</div></div>
+
+<!-- PAGE 5: Hardware/Software 4-5 -->
+<div class="page"><div class="content-wrap">
+  <h2>Hardware &amp; Software Recommendations <span class="muted" style="font-size:0.6em;">(continued)</span></h2>
+  <h3>GitHub Copilot for Code Iteration</h3>
+  <p>For the actual development work on FlowDeck's codebase, Copilot in your IDE (VS Code or whatever you're using) accelerates the small stuff — boilerplate, repetitive patterns, test writing — while you focus on architecture and design decisions. It complements conversational AI sessions rather than replacing them.</p>
+  <h3>SSH to Mac Mini</h3>
+  <p>Set up SSH with key-based authentication (no passwords) so you can manage the Mac Mini from anywhere. Combined with a dynamic DNS service or a simple Tailscale/WireGuard VPN setup, you can check on your AI server, restart services, or deploy updates from your phone while you're away from your desk.</p>
+</div></div>
+
+<!-- PAGE 6: Workflow Optimizations 1-2 -->
+<div class="page"><div class="content-wrap">
+  <h2>Workflow Optimizations</h2>
+  <h3>Use Scheduled Tasks More Aggressively</h3>
+  <p>You've already set up morning briefings and nightly syncs — that's great. But scheduled tasks can do more: automated trade journal entries at market close, weekly progress reports on FlowDeck development, daily Notion page cleanup, or even automated backups of your FlowDeck data. Think of scheduled tasks as your personal operations team. If you do something every day or every week, it should be automated.</p>
+  <h3>Batch Your AI Requests</h3>
+  <p>Instead of 10 separate small asks spread across a session, write one detailed spec that covers everything you need. A single well-structured prompt like "I need these 5 things built for the TradeDesk module: [detailed list with priorities]" produces better results than 5 separate conversations. The AI has full context in one place, can see dependencies between features, and can architect a coherent solution.</p>
+</div></div>
+
+<!-- PAGE 7: Workflow Optimizations 3-5 -->
+<div class="page"><div class="content-wrap">
+  <h2>Workflow Optimizations <span class="muted" style="font-size:0.6em;">(continued)</span></h2>
+  <h3>The IdeaDesk Solution</h3>
+  <p>The pattern of having random ideas throughout the day and losing them is universal among creative people. The IdeaDesk module directly solves this. Once it's live, make it the first thing you open. Voice a raw idea into it, tag it with a category, and move on. Review the idea backlog once a week and promote the good ones into actual tasks.</p>
+  <h3>Review Daily Artifacts Each Morning</h3>
+  <p>Every AI session produces artifacts — files, code, documents, decisions. Spending 5-10 minutes each morning reviewing what was built the night before serves two purposes: it refreshes your memory on where things stand, and it catches issues while they're small. Think of it as your personal code review. The morning after is when you'll spot the things that late-night enthusiasm missed.</p>
+  <h3>Define "Done" Before You Start</h3>
+  <p>Before each building session, write down (even in shorthand) what "done" looks like for that session. "Tonight I'm going to finish the IdeaDesk module with voice input, category tagging, and a grid view. That's it." This creates a natural stopping point and prevents the scope creep mentioned earlier. When you hit "done," stop. Celebrate the win. Add the next batch to tomorrow's list.</p>
+</div></div>
+
+<!-- PAGE 8: Summary -->
+<div class="page"><div class="content-wrap">
+  <h2>Summary</h2>
+  <p>Cory, the patterns are mostly good. You think in systems, you have genuine product vision, and you're willing to put in the work. The areas for improvement are all about focus and precision — finishing before adding, editing before rebuilding, and being specific when something needs to change. These are small adjustments that will compound into significantly better outputs over time.</p>
+  <p>The hardware investments (Mac Mini, second monitor) will pay for themselves in productivity within a month. The workflow habits (batching, reviewing, defining done) will pay for themselves within a week.</p>
+  <p>Keep building. Keep shipping. And keep asking for honest feedback — the fact that you want the truth is itself a strength most people don't have.</p>
+  <p class="muted" style="margin-top:40px;font-style:italic;">This report was written with honesty and respect, as requested. The goal is to help Cory work smarter, not to criticize.</p>
+</div></div>
+
+</div><!-- /deck -->
+
+<script>
+let current = 0;
+const deck = document.getElementById('deck');
+const total = deck.children.length;
+const progress = document.getElementById('progress');
+const counter = document.getElementById('counter');
+const navLeft = document.getElementById('navLeft');
+const navRight = document.getElementById('navRight');
+
+for (let i = 0; i < total; i++) {
+  const d = document.createElement('div');
+  d.className = 'dot' + (i === 0 ? ' active' : '');
+  d.onclick = () => goTo(i);
+  progress.appendChild(d);
+}
+
+function goTo(n) {
+  if (n < 0 || n >= total) return;
+  current = n;
+  deck.style.transform = `translateX(-${current * 100}vw)`;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  navLeft.classList.toggle('hidden', current === 0);
+  navRight.classList.toggle('hidden', current === total - 1);
+  counter.textContent = `${current + 1} / ${total}`;
+}
+function go(dir) { goTo(current + dir); }
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') go(1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') go(-1);
+});
+
+let tx = 0;
+document.addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+document.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - tx;
+  if (Math.abs(dx) > 50) go(dx < 0 ? 1 : -1);
+});
+
+goTo(0);
+</script>
+</body>
+</html>

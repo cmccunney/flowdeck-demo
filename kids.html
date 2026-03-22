@@ -140,6 +140,8 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background-image:radia
 .golden-page::before{display:none}
 
 button:focus-visible,.nav-btn:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+@keyframes interactPulse{0%,100%{border-color:rgba(0,229,255,.25);box-shadow:0 0 8px rgba(0,229,255,.1);}50%{border-color:rgba(0,229,255,.75);box-shadow:0 0 18px rgba(0,229,255,.4),0 0 30px rgba(0,229,255,.15);}}
+.interact-label{color:#00e5ff;font-size:10px;font-family:'JetBrains Mono',monospace;letter-spacing:3px;text-transform:uppercase;margin-top:10px;border:1px solid rgba(0,229,255,.4);padding:5px 14px;border-radius:20px;animation:interactPulse 2s infinite;white-space:nowrap;}
 
 /* RESPONSIVE */
 @media(max-width:768px){
@@ -324,7 +326,7 @@ button:focus-visible,.nav-btn:focus-visible{outline:2px solid var(--cyan);outlin
 
   <style>
     .iph-v2 { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:8px; flex:1; }
-    .iph-v2-device { width:210px; height:420px; background:#1a1a1a; border-radius:42px; box-shadow:0 0 0 8px #2a2a2a, 0 0 0 9px #444, 0 20px 60px rgba(0,0,0,0.8); position:relative; overflow:hidden; flex-shrink:0; }
+    .iph-v2-device { width:260px; height:520px; background:#1a1a1a; border-radius:52px; box-shadow:0 0 0 8px #2a2a2a, 0 0 0 9px #444, 0 20px 60px rgba(0,0,0,0.8); position:relative; overflow:hidden; flex-shrink:0; }
     .iph-v2-notch { position:absolute; top:0; left:50%; transform:translateX(-50%); width:80px; height:22px; background:#1a1a1a; border-radius:0 0 14px 14px; z-index:10; }
     .iph-v2-screen { position:absolute; inset:0; border-radius:34px; overflow:hidden; background:#060a0f; }
     .iph-v2-statusbar { display:flex; justify-content:space-between; align-items:center; padding:6px 14px 2px; font-size:8px; font-family:monospace; color:#aaa; }
@@ -457,7 +459,7 @@ button:focus-visible,.nav-btn:focus-visible{outline:2px solid var(--cyan);outlin
       <div class="iph-v2-dot" onclick="iphV2Go(2)"></div>
       <div class="iph-v2-dot" onclick="iphV2Go(3)"></div>
     </div>
-    <div class="iph-v2-hint">TAP DOTS &middot; SWIPE SCREENS</div>
+    <div class="interact-label">&#10022; INTERACTIVE &mdash; Touch &amp; Explore &#10022;</div>
   </div>
   <script>
   (function(){
@@ -467,8 +469,8 @@ button:focus-visible,.nav-btn:focus-visible{outline:2px solid var(--cyan);outlin
     function iphV2Go(n){cur=n;sl.style.transform='translateX(-'+n*100+'%)';document.querySelectorAll('.iph-v2-dot').forEach(function(d,i){d.classList.toggle('on',i===n);});}
     window.iphV2Go=iphV2Go;
     var sx=0;
-    sl.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
-    sl.addEventListener('touchend',function(e){var dx=sx-e.changedTouches[0].clientX;if(Math.abs(dx)>40){if(dx>0&&cur<tot-1)iphV2Go(cur+1);else if(dx<0&&cur>0)iphV2Go(cur-1);}},{passive:true});
+    sl.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;e.stopPropagation();},{passive:true});
+    sl.addEventListener('touchend',function(e){var dx=sx-e.changedTouches[0].clientX;if(Math.abs(dx)>40){if(dx>0&&cur<tot-1)iphV2Go(cur+1);else if(dx<0&&cur>0)iphV2Go(cur-1);}e.stopPropagation();},{passive:true});
   })();
   </script>
 </section>
@@ -483,7 +485,7 @@ button:focus-visible,.nav-btn:focus-visible{outline:2px solid var(--cyan);outlin
 
   <style>
     .ipad-v2 { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:8px; flex:1; }
-    .ipad-v2-device { width:340px; height:380px; background:#1c1c1e; border-radius:18px; box-shadow:0 0 0 8px #2a2a2c, 0 0 0 9px #444, 0 20px 50px rgba(0,0,0,0.8); position:relative; overflow:hidden; flex-shrink:0; }
+    .ipad-v2-device { width:420px; height:470px; background:#1c1c1e; border-radius:22px; box-shadow:0 0 0 8px #2a2a2c, 0 0 0 9px #444, 0 20px 50px rgba(0,0,0,0.8); position:relative; overflow:hidden; flex-shrink:0; }
     .ipad-v2-screen { position:absolute; inset:0; border-radius:10px; overflow:hidden; background:#060a0f; display:flex; flex-direction:column; }
     .ipad-v2-bar { background:#080c10; padding:5px 12px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #0e1520; flex-shrink:0; }
     .ipad-v2-logo { font-size:11px; font-family:monospace; font-weight:700; color:#00e5ff; }
@@ -593,6 +595,9 @@ button:focus-visible,.nav-btn:focus-visible{outline:2px solid var(--cyan);outlin
         </div>
       </div>
     </div>
+  </div>
+  <div style="display:flex;justify-content:center;">
+    <div class="interact-label">&#10022; INTERACTIVE &mdash; Touch &amp; Explore &#10022;</div>
   </div>
   <script>
   (function(){
@@ -1409,9 +1414,15 @@ function onYouTubeIframeAPIReady(){
   ytPlayer=new YT.Player('yt-player',{
     videoId:'aXbUyWBHoI8',
     playerVars:{autoplay:0,loop:1,playlist:'aXbUyWBHoI8'},
-    events:{onReady:function(e){e.target.setVolume(30);e.target.playVideo();}}
+    events:{onReady:function(e){e.target.setVolume(30);}}
   });
 }
+var ytStarted=false;
+document.addEventListener('click',function(){
+  if(!ytStarted&&typeof ytPlayer!=='undefined'&&ytPlayer&&ytPlayer.playVideo){
+    ytStarted=true;ytPlayer.playVideo();
+  }
+},{passive:true});
 </script>
 </body>
 </html>
