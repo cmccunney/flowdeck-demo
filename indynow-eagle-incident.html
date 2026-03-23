@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Out-of-State Woman Creates Scene at Popular Indy Eatery | IndyNow News</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Out-of-State Woman Creates Scene at Popular Indy Eatery | IndyNow News">
+  <meta property="og:description" content="A visiting woman turned a quiet Friday dinner on Mass Ave into a sticky, carbonated spectacle — witnesses 'genuinely baffled'">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="IndyNow">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red: #c0392b;
+      --red-dark: #96281b;
+      --ink: #1a1a1a;
+      --muted: #555;
+      --rule: #ddd;
+      --bg: #f9f7f4;
+      --white: #fff;
+      --serif: 'Georgia', 'Times New Roman', serif;
+      --sans: 'Arial', 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+      font-family: var(--serif);
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    a { color: var(--red); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--red);
+      color: #fff;
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      padding: 5px 0;
+      text-align: center;
+    }
+    .topbar span { opacity: 0.85; margin: 0 12px; }
+
+    /* ── MASTHEAD ── */
+    .masthead {
+      background: var(--white);
+      border-bottom: 4px solid var(--red);
+      padding: 22px 0 16px;
+      text-align: center;
+    }
+    .masthead-inner { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .site-name {
+      font-family: var(--serif);
+      font-size: 64px;
+      font-weight: 700;
+      letter-spacing: -2px;
+      color: var(--ink);
+      line-height: 1;
+    }
+    .site-name span { color: var(--red); }
+    .site-tagline {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .masthead-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 12px;
+      font-family: var(--sans);
+      font-size: 11px;
+      color: var(--muted);
+      border-top: 1px solid var(--rule);
+      padding-top: 10px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--ink);
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    nav ul li a {
+      display: block;
+      color: #ccc;
+      padding: 11px 16px;
+      transition: color 0.15s;
+    }
+    nav ul li a:hover, nav ul li.active a { color: #fff; text-decoration: none; }
+    nav ul li.active a { border-bottom: 3px solid var(--red); }
+
+    /* ── LAYOUT ── */
+    .page-wrap {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 40px;
+    }
+
+    /* ── ARTICLE ── */
+    .article-section {}
+
+    .article-kicker {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 10px;
+    }
+
+    .article-headline {
+      font-family: var(--serif);
+      font-size: 38px;
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 14px;
+      border-bottom: 2px solid var(--rule);
+      padding-bottom: 14px;
+    }
+
+    .article-subhead {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 20px;
+      color: var(--muted);
+      line-height: 1.4;
+      margin-bottom: 18px;
+    }
+
+    .byline {
+      font-family: var(--sans);
+      font-size: 12px;
+      color: var(--muted);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 9px 0;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .byline strong { color: var(--ink); }
+
+    .share-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .share-btn {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      border-radius: 3px;
+      cursor: pointer;
+      border: none;
+    }
+    .share-btn.facebook { background: #3b5998; color: #fff; }
+    .share-btn.twitter  { background: #1da1f2; color: #fff; }
+    .share-btn.email    { background: #555; color: #fff; }
+    .share-btn.copy     { background: var(--rule); color: var(--ink); }
+
+    .article-image-wrap {
+      margin-bottom: 22px;
+    }
+    .article-image-wrap img {
+      width: 100%;
+      display: block;
+    }
+    .image-caption {
+      font-family: var(--sans);
+      font-size: 12px;
+      color: var(--muted);
+      border-left: 3px solid var(--red);
+      padding: 6px 10px;
+      background: #f0ece8;
+      margin-top: 0;
+    }
+
+    .article-body p {
+      margin-bottom: 22px;
+    }
+
+    .drop-cap::first-letter {
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 0.75;
+      float: left;
+      margin: 8px 10px 0 0;
+      color: var(--red);
+      font-family: var(--serif);
+    }
+
+    /* Pull quote */
+    .pull-quote {
+      border-top: 3px solid var(--red);
+      border-bottom: 1px solid var(--rule);
+      margin: 32px 0;
+      padding: 20px 0 16px;
+    }
+    .pull-quote blockquote {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-style: italic;
+      line-height: 1.35;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+    .pull-quote cite {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-style: normal;
+    }
+    .pull-quote cite::before { content: '— '; }
+
+    /* Section rule */
+    .section-rule {
+      text-align: center;
+      margin: 28px 0;
+      position: relative;
+    }
+    .section-rule::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0; right: 0;
+      height: 1px;
+      background: var(--rule);
+    }
+    .section-rule span {
+      position: relative;
+      background: var(--bg);
+      padding: 0 12px;
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* Tags */
+    .article-tags {
+      margin-top: 30px;
+      padding-top: 18px;
+      border-top: 2px solid var(--rule);
+    }
+    .article-tags span {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-right: 6px;
+    }
+    .tag {
+      display: inline-block;
+      background: var(--rule);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 2px;
+      margin: 3px 3px 3px 0;
+    }
+    .tag:hover { background: var(--red); color: #fff; text-decoration: none; }
+
+    /* ── SIDEBAR ── */
+    .sidebar {}
+
+    .sidebar-widget {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      margin-bottom: 28px;
+      overflow: hidden;
+    }
+    .widget-header {
+      background: var(--ink);
+      color: #fff;
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 9px 14px;
+    }
+    .widget-body { padding: 14px; }
+
+    .related-list { list-style: none; }
+    .related-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .related-list li:last-child { border-bottom: none; padding-bottom: 0; }
+    .related-list li a { color: var(--ink); font-family: var(--serif); }
+    .related-list li a:hover { color: var(--red); text-decoration: none; }
+    .related-list .meta {
+      font-family: var(--sans);
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .most-read-list { list-style: none; counter-reset: mr; }
+    .most-read-list li {
+      display: flex;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 13px;
+      line-height: 1.4;
+      counter-increment: mr;
+    }
+    .most-read-list li:last-child { border-bottom: none; }
+    .most-read-list li::before {
+      content: counter(mr);
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--rule);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 24px;
+    }
+    .most-read-list li a { color: var(--ink); font-family: var(--serif); }
+    .most-read-list li a:hover { color: var(--red); text-decoration: none; }
+
+    .weather-widget { text-align: center; }
+    .weather-widget .temp {
+      font-family: var(--serif);
+      font-size: 52px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1;
+    }
+    .weather-widget .condition {
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .weather-widget .location {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-top: 6px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: #aaa;
+      font-family: var(--sans);
+      font-size: 12px;
+      margin-top: 50px;
+      padding: 30px 20px;
+      text-align: center;
+      line-height: 1.8;
+    }
+    footer .footer-logo {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -1px;
+      margin-bottom: 10px;
+    }
+    footer .footer-logo span { color: var(--red); }
+    footer .disclaimer {
+      max-width: 680px;
+      margin: 16px auto 0;
+      padding-top: 16px;
+      border-top: 1px solid #333;
+      color: #666;
+      font-size: 11px;
+      line-height: 1.6;
+    }
+    footer .footer-links { margin: 12px 0; }
+    footer .footer-links a { color: #888; margin: 0 10px; }
+    footer .footer-links a:hover { color: #fff; }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      .page-wrap { grid-template-columns: 1fr; gap: 28px; }
+      .article-headline { font-size: 26px; }
+      .site-name { font-size: 42px; }
+      nav ul { flex-wrap: wrap; }
+      nav ul li a { padding: 8px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span>INDIANAPOLIS, IN</span>
+  <span>SATURDAY, MARCH 22, 2026</span>
+  <span>PARTLY CLOUDY · 54°F</span>
+</div>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="site-name">Indy<span>Now</span></div>
+    <div class="site-tagline">Indianapolis &amp; Central Indiana's Source for Local News</div>
+    <div class="masthead-meta">
+      <span>Est. 2009 · Greater Indianapolis</span>
+      <span>Saturday Morning Edition</span>
+      <span>Subscribe &nbsp;|&nbsp; E-Edition &nbsp;|&nbsp; Sign In</span>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li class="active"><a href="#">Local</a></li>
+    <li><a href="#">Politics</a></li>
+    <li><a href="#">Business</a></li>
+    <li><a href="#">Sports</a></li>
+    <li><a href="#">Arts &amp; Culture</a></li>
+    <li><a href="#">Food &amp; Drink</a></li>
+    <li><a href="#">Opinion</a></li>
+    <li><a href="#">Obituaries</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE CONTENT -->
+<div class="page-wrap">
+
+  <!-- ARTICLE -->
+  <main class="article-section">
+
+    <div class="article-kicker">Local &rsaquo; Mass Ave &rsaquo; Dining</div>
+
+    <h1 class="article-headline">Out-of-State Woman Unleashes Soda Catastrophe at The Eagle; Witnesses Left Completely Bewildered</h1>
+
+    <p class="article-subhead">A quiet Friday dinner on Massachusetts Avenue devolved into a sticky, carbonated spectacle when a visiting patron sent a 32-ounce Coca-Cola airborne — then reportedly stared at the wreckage "like she was watching a sunset."</p>
+
+    <div class="byline">
+      <span>By <strong>Dana Whitfield</strong>, IndyNow Local Desk</span>
+      <span>March 22, 2026 &nbsp;·&nbsp; 8:41 a.m. ET</span>
+    </div>
+
+    <div class="share-row">
+      <button class="share-btn facebook">Facebook</button>
+      <button class="share-btn twitter">Twitter / X</button>
+      <button class="share-btn email">Email</button>
+      <button class="share-btn copy">Copy Link</button>
+    </div>
+
+    <!-- PLACEHOLDER IMAGE (SVG scene) -->
+    <div class="article-image-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 380" style="width:100%;display:block;background:#2a1a0e;">
+        <!-- Back wall / restaurant interior suggestion -->
+        <rect width="820" height="380" fill="#1e1209"/>
+        <!-- Exposed brick suggestion -->
+        <rect x="0" y="0" width="820" height="380" fill="url(#brick)" opacity="0.18"/>
+        <defs>
+          <pattern id="brick" x="0" y="0" width="60" height="22" patternUnits="userSpaceOnUse">
+            <rect width="60" height="22" fill="none"/>
+            <rect x="1" y="1" width="56" height="9" rx="1" fill="#8b3a2a" opacity="0.6"/>
+            <rect x="31" y="12" width="56" height="9" rx="1" fill="#8b3a2a" opacity="0.6"/>
+          </pattern>
+        </defs>
+        <!-- Table surface -->
+        <ellipse cx="410" cy="310" rx="240" ry="55" fill="#5c3317"/>
+        <rect x="170" y="280" width="480" height="40" rx="6" fill="#6b3d1e"/>
+        <!-- Spill puddle -->
+        <ellipse cx="410" cy="295" rx="210" ry="38" fill="#1a0a00" opacity="0.55"/>
+        <ellipse cx="395" cy="293" rx="195" ry="32" fill="#0d0500" opacity="0.4"/>
+        <!-- Fizz bubbles in spill -->
+        <circle cx="340" cy="288" r="5" fill="#fff" opacity="0.07"/>
+        <circle cx="380" cy="300" r="3" fill="#fff" opacity="0.06"/>
+        <circle cx="430" cy="283" r="6" fill="#fff" opacity="0.05"/>
+        <circle cx="460" cy="295" r="4" fill="#fff" opacity="0.07"/>
+        <circle cx="510" cy="287" r="3" fill="#fff" opacity="0.05"/>
+        <!-- Fallen cup -->
+        <g transform="translate(290,230) rotate(-55)">
+          <rect x="0" y="0" width="42" height="72" rx="4" fill="#e8e8e8"/>
+          <rect x="0" y="0" width="42" height="12" rx="4" fill="#ccc"/>
+          <text x="21" y="50" text-anchor="middle" font-size="9" fill="#c0392b" font-family="Arial" font-weight="bold">LARGE</text>
+        </g>
+        <!-- Lid flying -->
+        <ellipse cx="520" cy="160" rx="28" ry="8" fill="#ccc" transform="rotate(-20 520 160)"/>
+        <ellipse cx="520" cy="160" rx="22" ry="5" fill="#ddd" transform="rotate(-20 520 160)"/>
+        <!-- Straw flying -->
+        <rect x="560" y="120" width="5" height="80" rx="2" fill="#e74c3c" transform="rotate(30 560 120)"/>
+        <!-- Coca-Cola splatter arcs -->
+        <path d="M 350 270 Q 290 200 240 155" stroke="#3b0900" stroke-width="14" fill="none" opacity="0.7" stroke-linecap="round"/>
+        <path d="M 400 265 Q 480 210 550 175" stroke="#3b0900" stroke-width="10" fill="none" opacity="0.6" stroke-linecap="round"/>
+        <path d="M 380 270 Q 420 220 390 170" stroke="#3b0900" stroke-width="8" fill="none" opacity="0.5" stroke-linecap="round"/>
+        <!-- Woman silhouette (right) -->
+        <circle cx="620" cy="175" r="30" fill="#d4a76a"/>
+        <!-- hair -->
+        <path d="M 595 170 Q 590 135 620 130 Q 650 135 645 170" fill="#2c1810"/>
+        <rect x="595" y="200" width="50" height="90" rx="10" fill="#4a2c6e"/>
+        <rect x="580" y="205" width="18" height="55" rx="8" fill="#d4a76a"/>
+        <rect x="622" y="205" width="18" height="55" rx="8" fill="#d4a76a"/>
+        <!-- calm expression - wide eyes looking at spill -->
+        <circle cx="610" cy="175" r="5" fill="#fff"/>
+        <circle cx="630" cy="175" r="5" fill="#fff"/>
+        <circle cx="611" cy="176" r="3" fill="#3b2010"/>
+        <circle cx="631" cy="176" r="3" fill="#3b2010"/>
+        <!-- subtle smile -->
+        <path d="M 611 186 Q 620 192 629 186" stroke="#3b2010" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <!-- Witness silhouette 1 (left) - shocked -->
+        <circle cx="180" cy="195" r="24" fill="#c8a882"/>
+        <rect x="160" y="215" width="40" height="70" rx="8" fill="#2c4a6e"/>
+        <rect x="148" y="218" width="14" height="45" rx="6" fill="#c8a882"/>
+        <rect x="198" y="218" width="14" height="45" rx="6" fill="#c8a882"/>
+        <!-- shocked mouth -->
+        <ellipse cx="180" cy="204" rx="6" ry="8" fill="#2c1810"/>
+        <!-- shocked eyes wide -->
+        <circle cx="172" cy="192" r="5" fill="#fff"/>
+        <circle cx="188" cy="192" r="5" fill="#fff"/>
+        <circle cx="172" cy="192" r="3" fill="#333"/>
+        <circle cx="188" cy="192" r="3" fill="#333"/>
+        <!-- Witness 2 (background) - hand over mouth -->
+        <circle cx="110" cy="215" r="18" fill="#b8956a"/>
+        <rect x="97" y="230" width="26" height="50" rx="6" fill="#5a3a2a"/>
+        <!-- hand over mouth -->
+        <rect x="102" y="222" width="20" height="12" rx="6" fill="#b8956a"/>
+        <!-- Server rushing with mop bucket suggestion -->
+        <circle cx="700" cy="200" r="22" fill="#e8c9a0"/>
+        <rect x="685" y="220" width="30" height="65" rx="6" fill="#fff"/>
+        <rect x="680" y="225" width="12" height="40" rx="5" fill="#e8c9a0"/>
+        <rect x="712" y="255" width="8" height="50" rx="3" fill="#888"/>
+        <!-- mop head -->
+        <ellipse cx="716" cy="308" rx="12" ry="6" fill="#ddd"/>
+        <!-- Napkins flying -->
+        <rect x="450" y="200" width="22" height="16" rx="2" fill="#fff" opacity="0.85" transform="rotate(15 450 200)"/>
+        <rect x="310" y="210" width="18" height="14" rx="2" fill="#fff" opacity="0.75" transform="rotate(-10 310 210)"/>
+        <!-- Caption area -->
+        <rect x="0" y="340" width="820" height="40" fill="#000" opacity="0.55"/>
+        <text x="20" y="364" font-family="Arial" font-size="12" fill="#ccc">The Eagle Bar &amp; Grill, Massachusetts Avenue — Friday evening. Composure levels: mixed. Carbonation levels: formerly extreme.</text>
+      </svg>
+      <div class="image-caption">The Eagle on Massachusetts Avenue, where a routine Friday dinner took an unexpected turn. The woman at center — described by staff as "remarkably serene" — reportedly never raised her voice. <em>Illustration: IndyNow Graphics</em></div>
+    </div>
+
+    <!-- BODY -->
+    <div class="article-body">
+
+      <p class="drop-cap"><strong>INDIANAPOLIS</strong> — It began, as most small disasters do, with a simple reach.</p>
+
+      <p>A woman — described by multiple witnesses as "definitely not from here" — extended her hand across the table at The Eagle Bar &amp; Grill on Massachusetts Avenue shortly after 7 p.m. Friday. Her apparent target: a 32-ounce Coca-Cola sweating quietly in a wax cup near the edge of the table. What followed was swift, total, and, by all accounts, impressively thorough.</p>
+
+      <p>The cup went first. Then the lid. Then the straw — which witnesses report achieved brief independent flight before disappearing beneath a nearby two-top. Within approximately 1.3 seconds, the better part of a 32-ounce fountain Coke had redistributed itself across the tabletop, the bench seat, the floor, one menu, and a portion of the woman's companion's left sleeve.</p>
+
+      <p>"It was like a carbonated weather event," said Marcus Delgado, 34, who was seated two tables away. "I've seen spills. This was not a spill. This was a release."</p>
+
+      <div class="pull-quote">
+        <blockquote>"She just looked at it. Peaceful. Like she was watching a sunset over the canal. I genuinely did not know what to do with that."</blockquote>
+        <cite>Jenna Whitmore, server, The Eagle</cite>
+      </div>
+
+      <p>What distinguished the incident from a routine dining mishap was not the volume of liquid displaced — though staff confirmed it was "genuinely a lot" — but rather the reaction of the woman responsible.</p>
+
+      <p>She did not flinch. She did not gasp. She did not immediately reach for napkins or attempt to stanch the flow. According to three separate witnesses, she simply looked at the spreading puddle with an expression that one patron described as "deep, contemplative calm."</p>
+
+      <p>"She had this look on her face," said Delgado. "Like she was running a slow internal calculation and had just accepted the answer."</p>
+
+      <div class="section-rule"><span>⬥ ⬥ ⬥</span></div>
+
+      <p>Server Jenna Whitmore, a three-year veteran of The Eagle's Friday night rush, said she arrived at the table within seconds to find the woman still seated, hands folded, surveying the damage.</p>
+
+      <p>"I asked if she was okay," Whitmore said. "She nodded very slowly and said, 'I did that.' Not apologizing yet — just confirming. Like she was a scientist recording an observation."</p>
+
+      <p>The cleanup required two staff members and a full roll of bar towels. The straw was eventually located. The cup, having rolled off the table entirely, was retrieved from beneath the adjacent seat. The lid, Whitmore noted, "just kind of vanished."</p>
+
+      <div class="pull-quote">
+        <blockquote>"She had out-of-state energy. You can tell. There's a certain ease — like the city's consequences don't fully apply to them yet."</blockquote>
+        <cite>Marcus Delgado, witness</cite>
+      </div>
+
+      <p>Fellow diner Carla Ybarra, 41, of Broad Ripple, was less charitable in her assessment. "She looked stoned as all get out," Ybarra said, then immediately softened. "But like — peacefully stoned. She wasn't bothering anyone. She was just… extremely present with the mess she made."</p>
+
+      <div class="section-rule"><span>⬥ ⬥ ⬥</span></div>
+
+      <p>Several minutes after the incident, the woman did apologize — described by staff as "sincere, measured, and weirdly eloquent." She then tipped generously, "to a degree that recontextualized the whole event," according to Whitmore, and placed an order for another Coca-Cola.</p>
+
+      <p>"Same size," Whitmore confirmed. "32 ounces. No lid this time, at her request. Which honestly, I respected."</p>
+
+      <p>The second beverage arrived without incident. The woman and her companion remained at their table for approximately another hour, finishing their meal in apparent peace. The companion, whose sleeve had borne a portion of the initial impact, declined to comment through what witnesses described as "a very specific expression."</p>
+
+      <p>The woman was last seen departing through the restaurant's front entrance and heading north on College Avenue. She did not look back.</p>
+
+      <div class="pull-quote">
+        <blockquote>"If that had been me, I would have been mortified for three to five business days. She just… ordered another one. I want that energy. I'm just being honest."</blockquote>
+        <cite>Carla Ybarra, Broad Ripple resident</cite>
+      </div>
+
+      <p>The Eagle, which opened its Indianapolis location on Massachusetts Avenue in 2015, has been a fixture of the Indy dining scene for over a decade. It is known for its fried chicken, extensive bourbon selection, and, as of Friday evening, at least one extraordinary act of soda-based equanimity.</p>
+
+      <p>Management declined to comment, but sources close to the situation confirmed the menu in question had been thoroughly dried and returned to service by the end of the evening.</p>
+
+      <p>The straw has not been accounted for.</p>
+
+      <p><em>Dana Whitfield covers local dining, neighborhood news, and miscellaneous incidents for the IndyNow Local Desk. She can be reached at dana.whitfield@indynow.example.</em></p>
+
+    </div>
+
+    <div class="article-tags">
+      <span>Tags:</span>
+      <a href="#" class="tag">Mass Ave</a>
+      <a href="#" class="tag">The Eagle</a>
+      <a href="#" class="tag">Dining</a>
+      <a href="#" class="tag">Local News</a>
+      <a href="#" class="tag">Out-of-Towners</a>
+      <a href="#" class="tag">Soft Drinks</a>
+      <a href="#" class="tag">Incidents</a>
+    </div>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- Weather -->
+    <div class="sidebar-widget">
+      <div class="widget-header">Indianapolis Weather</div>
+      <div class="widget-body weather-widget">
+        <div class="temp">54°</div>
+        <div class="condition">Partly Cloudy · Light Wind</div>
+        <div class="location">Indianapolis, IN · Saturday</div>
+      </div>
+    </div>
+
+    <!-- Related Stories -->
+    <div class="sidebar-widget">
+      <div class="widget-header">Related Stories</div>
+      <div class="widget-body">
+        <ul class="related-list">
+          <li>
+            <a href="#">Mass Ave Corridor Named Among Midwest's Top Dining Destinations for Third Consecutive Year</a>
+            <div class="meta">Food &amp; Drink · March 18, 2026</div>
+          </li>
+          <li>
+            <a href="#">Local Restaurant Week Returns to Downtown Indy with Record Participation</a>
+            <div class="meta">Food &amp; Drink · March 11, 2026</div>
+          </li>
+          <li>
+            <a href="#">The Complete Visitor's Guide to Massachusetts Avenue</a>
+            <div class="meta">Arts &amp; Culture · Feb. 27, 2026</div>
+          </li>
+          <li>
+            <a href="#">Survey: 1 in 4 Indy Diners Report Witnessing a 'Memorable Incident' at a Restaurant in the Past Year</a>
+            <div class="meta">Local · Jan. 14, 2026</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Most Read -->
+    <div class="sidebar-widget">
+      <div class="widget-header">Most Read Today</div>
+      <div class="widget-body">
+        <ul class="most-read-list">
+          <li>
+            <a href="#">Out-of-State Woman Unleashes Soda Catastrophe at The Eagle; Witnesses Left Completely Bewildered</a>
+          </li>
+          <li>
+            <a href="#">IMPD Reports Significant Drop in Downtown Traffic Incidents Following Spring Street Redesign</a>
+          </li>
+          <li>
+            <a href="#">Pacers Announce 2026 Playoff Watch Party Locations Across Greater Indianapolis</a>
+          </li>
+          <li>
+            <a href="#">Broad Ripple Farmers Market Opens for Season with Record Number of Vendors</a>
+          </li>
+          <li>
+            <a href="#">City Council Approves New Bike Lane Extensions Through Fountain Square and Bates-Hendricks</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="sidebar-widget">
+      <div class="widget-header">IndyNow Daily Briefing</div>
+      <div class="widget-body" style="font-family:var(--sans);font-size:13px;color:var(--muted);line-height:1.6;">
+        <p style="margin-bottom:12px;">Get Indianapolis news delivered to your inbox each morning. No fluff. Just Indy.</p>
+        <input type="email" placeholder="Your email address" style="width:100%;padding:8px;border:1px solid var(--rule);font-family:var(--sans);font-size:13px;margin-bottom:8px;">
+        <button style="width:100%;background:var(--red);color:#fff;border:none;padding:9px;font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;">Subscribe Free</button>
+      </div>
+    </div>
+
+  </aside>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Indy<span>Now</span></div>
+  <div class="footer-links">
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Advertise</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+    <a href="#">Sitemap</a>
+  </div>
+  <div>&copy; 2026 IndyNow Media Group. All rights reserved.</div>
+  <div class="disclaimer">
+    <strong>SATIRE DISCLAIMER:</strong> IndyNow is a satirical publication. This article is entirely fictional and intended for entertainment purposes only. Any resemblance to actual events, persons, restaurants, or carbonated beverage incidents is coincidental and extremely funny. The Eagle is a real and beloved Indianapolis establishment; no actual soda disasters are implied or alleged. Please drink responsibly and keep a firm grip on your cup.
+  </div>
+</footer>
+
+</body>
+</html>
